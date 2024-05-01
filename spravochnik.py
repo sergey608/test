@@ -4,7 +4,6 @@ contact_data = {
     'phone_number': None,
 }
 
-
 def ask_data():
     s_name = input("Введите фамилию: ")
     f_name = input("Введите имя: ")
@@ -16,7 +15,6 @@ def ask_data():
                'phone_number': phone}
     return contact
 
-
 def add_new_contact():
     contact = ask_data()
     with open('phonebook.txt', 'a', encoding='utf-8') as file:
@@ -24,14 +22,12 @@ def add_new_contact():
         file.write('\n')
     return True
 
-
 def open_phonebook():
     title = ["Фамилия", "Имя", "Отчество", "Телефон"]
     with open('phonebook.txt', 'r', encoding='utf-8') as file:
         print("\t\t".join(title))
         for line in file:
             print("\t\t".join(line.strip().split(";")))
-
 
 def find_contact():
     print(f"Поиск по:\n1 имени\n2 фамилии\n3 отчеству\n4 номеру\n0 выход")
@@ -46,16 +42,16 @@ def find_contact():
                     (choice == 4 and contact[3] == search_term):
                 print("\t\t".join(contact))
 
-
 def copy_contact():
-    source_file = input("Введите имя исходного файла: ")
-    target_file = input("Введите имя целевого файла: ")
+    source_file = 'phonebook.txt'
+    target_file = input("Введите имя целевого файла: ") + '.txt'
+    open_phonebook()
     line_number = int(input("Введите номер строки, которую нужно скопировать: "))
 
     with open(source_file, 'r', encoding='utf-8') as file:
         lines = file.readlines()
 
-    if line_number > len(lines):
+    if line_number > len(lines) or line_number < 0:
         print("Нет строки с таким номером.")
         return
 
@@ -63,23 +59,3 @@ def copy_contact():
         file.write(lines[line_number - 1])
 
     print("Контакт успешно скопирован.")
-
-
-def main():
-    isStop = 10
-    while isStop != 0:
-        print(
-            f"Выберете что хотите сделать:\n1 найти\n2 добавить\n3 сохранить\n4 открыть всю книгу\n5 копирование\n0 выход")
-        isStop = int(input(">"))
-        if isStop == 1:
-            find_contact()
-        elif isStop == 2:
-            add_new_contact()
-        elif isStop == 4:
-            open_phonebook()
-        elif isStop == 5:
-            copy_contact()
-        input("Нажмите Enter чтобы продолжить")
-
-
-main()
