@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мастер маникюра</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #ff69b4;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #ff69b4;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #ff1493;
+        }
+        .container {
+            padding: 20px;
+        }
+        .services, .gallery, .contact {
+            margin-bottom: 40px;
+        }
+        .gallery img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            margin: 10px;
+        }
+        footer {
+            background-color: #ff69b4;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Мастер маникюра Александра</h1>
+        <h2>Мой девиз:"Красота в деталях, совершенство в каждом штрихе"</h2>
+        <p>Красота и уход за вашими ногтями</p>
+
+    </header>
+    <nav>
+        <a href="#services">Услуги</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+    <div class="container">
+        <section id="services" class="services">
+            <h2>Наши услуги</h2>
+            <ul>
+                <li>Маникюр</li>
+                <li>Педикюр</li>
+                <li>Наращивание ногтей</li>
+                <li>Дизайн ногтей</li>
+                <li>Уход за кутикулой</li>
+            </ul>
+        </section>
+        <section id="gallery" class="gallery">
+            <h2>Галерея</h2>
+            <img src="nogti1.webp" alt="Пример работы 1">
+            <img src="nogti2.webp" alt="Пример работы 2">
+            <img src="nogti3.webp" alt="Пример работы 3">
+        </section>
+        <section id="contact" class="contact">
+            <h2>Контакты</h2>
+            <p>+37529123123</p>
